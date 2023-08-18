@@ -196,16 +196,18 @@ class _AzListViewState extends State<AzListView> {
         ),
         Align(
           alignment: widget.indexBarAlignment,
-          child: IndexBar(
-            data: widget.indexBarData,
-            width: widget.indexBarWidth,
-            height: widget.indexBarHeight,
-            itemHeight: widget.indexBarItemHeight,
-            margin: widget.indexBarMargin,
-            indexHintBuilder: widget.indexHintBuilder,
-            indexBarDragListener: dragListener,
-            options: widget.indexBarOptions,
-            controller: indexBarController,
+          child: FittedBox(
+            child: IndexBar(
+              data: widget.indexBarData,
+              width: widget.indexBarWidth,
+              height: widget.indexBarHeight,
+              itemHeight: widget.indexBarItemHeight,
+              margin: widget.indexBarMargin,
+              indexHintBuilder: widget.indexHintBuilder,
+              indexBarDragListener: dragListener,
+              options: widget.indexBarOptions,
+              controller: indexBarController,
+            ),
           ),
         ),
       ],
