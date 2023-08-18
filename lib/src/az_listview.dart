@@ -196,7 +196,7 @@ class _AzListViewState extends State<AzListView> {
         ),
         Align(
           alignment: widget.indexBarAlignment,
-          child: FittedBox(
+          child: SingleChildScrollView(
             child: IndexBar(
               data: widget.indexBarData,
               width: widget.indexBarWidth,
