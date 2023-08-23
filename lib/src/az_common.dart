@@ -1,6 +1,6 @@
 /// ISuspension Bean.
 abstract class ISuspensionBean {
-  bool isShowSuspension = false;
+  bool? isShowSuspension = false;
 
   String getSuspensionTag(); //Suspension Tag
 }

@@ -110,9 +110,9 @@ class _SuspensionViewState extends State<SuspensionView> {
           } else {
             int next = math.min(index + 1, widget.itemCount - 1);
             ISuspensionBean bean = widget.data[next];
-            if (bean.isShowSuspension) {
+            if ((bean.isShowSuspension??false)) {
               double height =
-                  context.findRenderObject()?.paintBounds?.height ?? 0;
+                  context.findRenderObject()?.paintBounds.height ?? 0;
               double topTemp = itemPosition.itemTrailingEdge * height;
               top = math.min(widget.susItemHeight, topTemp) -
                   widget.susItemHeight;
@@ -132,7 +132,7 @@ class _SuspensionViewState extends State<SuspensionView> {
 
   Widget _buildItem(BuildContext context, int index) {
     ISuspensionBean bean = widget.data[index];
-    if (!bean.isShowSuspension || widget.susItemBuilder == null) {
+    if (!(bean.isShowSuspension??false) || widget.susItemBuilder == null) {
       return widget.itemBuilder(context, index);
     }
     return Column(
